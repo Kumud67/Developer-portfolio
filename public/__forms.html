@@ -1,0 +1,11 @@
+<!--
+  This file is not used as a page. Netlify scans static HTML for forms with
+  data-netlify="true" during deploy to register them. Since the real form in
+  the React app is rendered client-side, this static copy lets Netlify detect
+  and wire up form submissions/notifications correctly.
+-->
+<form name="contact" data-netlify="true" hidden>
+  <input type="text" name="name" />
+  <input type="email" name="email" />
+  <textarea name="message"></textarea>
+</form>
