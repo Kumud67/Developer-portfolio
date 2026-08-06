@@ -1,7 +1,7 @@
 export const skillGroups = [
   {
     label: "Languages",
-    items: ["Java", "SQL", "JavaScript"],
+    items: ["Java", "SQL", "Python ","JavaScript"],
   },
   {
     label: "Backend",
@@ -17,7 +17,7 @@ export const skillGroups = [
   },
   {
     label: "DevOps",
-    items: ["Docker", "Kubernetes", "Jenkins", "GitHub Actions", "Bamboo"],
+    items: ["Docker", "Kubernetes","GitHub Actions", "Bamboo","Harness"],
   },
   {
     label: "Cloud",
