@@ -113,3 +113,5 @@ and set up email notifications (Site settings → Forms → Form notifications).
 - Swap `StreamHero.jsx` colors/speed to taste — all driven by the `LANES` array
 - Add a real GitHub Actions badge or live demo link per project once deployed
 - Add `react-helmet-async` if you want per-page `<title>` tags on project pages
+
+qqqqqqqqqq
