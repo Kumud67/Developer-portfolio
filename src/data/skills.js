@@ -13,7 +13,7 @@ export const skillGroups = [
   },
   {
     label: "Databases",
-    items: ["PostgreSQL", "MySQL", "MongoDB", "Redis"],
+    items: ["PostgreSQL", "MySQL", "MongoDB"],
   },
   {
     label: "DevOps",
