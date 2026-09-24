@@ -7,14 +7,33 @@ export default function CursorEffect() {
     const cursor = cursorRef.current;
     if (!cursor) return undefined;
 
+    let animationFrame;
+    let targetX = -100;
+    let targetY = -100;
+    let currentX = targetX;
+    let currentY = targetY;
+
     const handlePointerMove = (event) => {
-      cursor.style.setProperty("--cursor-x", `${event.clientX}px`);
-      cursor.style.setProperty("--cursor-y", `${event.clientY}px`);
+      targetX = event.clientX;
+      targetY = event.clientY;
       cursor.classList.add("is-visible");
     };
 
+    const animate = () => {
+      currentX += (targetX - currentX) * 0.14;
+      currentY += (targetY - currentY) * 0.14;
+      cursor.style.setProperty("--cursor-x", `${currentX}px`);
+      cursor.style.setProperty("--cursor-y", `${currentY}px`);
+      animationFrame = requestAnimationFrame(animate);
+    };
+
     window.addEventListener("pointermove", handlePointerMove, { passive: true });
-    return () => window.removeEventListener("pointermove", handlePointerMove);
+    animationFrame = requestAnimationFrame(animate);
+
+    return () => {
+      window.removeEventListener("pointermove", handlePointerMove);
+      cancelAnimationFrame(animationFrame);
+    };
   }, []);
 
   return <span ref={cursorRef} className="cursor-effect" aria-hidden="true" />;

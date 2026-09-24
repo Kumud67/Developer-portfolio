@@ -19,7 +19,7 @@ const fadeUp = {
 
 export default function Home() {
   return (
-    <main>
+    <main className="home-orbit-field">
       {/* ===================== HERO ===================== */}
       <section className="relative flex min-h-screen flex-col items-center justify-center overflow-hidden px-6 pt-24">
         <div className="hero-ribbons pointer-events-none" />

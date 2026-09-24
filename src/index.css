@@ -76,6 +76,7 @@ body {
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
   overflow-x: hidden;
+  cursor: auto; /* Restore native pointer */
 }
 
 #root {
@@ -101,25 +102,68 @@ a {
   display: none;
 }
 
-@media (hover: hover) and (pointer: fine) {
-  body {
-    cursor: none;
-  }
+.home-orbit-field {
+  position: relative;
+  isolation: isolate;
+}
 
+.home-orbit-field::before,
+.home-orbit-field::after {
+  content: "";
+  position: fixed;
+  inset: -28%;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.26;
+  background:
+    repeating-radial-gradient(
+      ellipse at 50% 42%,
+      transparent 0 150px,
+      var(--border-hairline) 151px 152px,
+      transparent 153px 300px
+    );
+  transform: rotate(-12deg) scale(1.08);
+  animation: page-orbit 34s linear infinite;
+}
+
+.home-orbit-field::after {
+  opacity: 0.18;
+  background:
+    repeating-radial-gradient(
+      ellipse at 48% 58%,
+      transparent 0 190px,
+      var(--accent-stream-dim) 191px 193px,
+      transparent 194px 360px
+    );
+  transform: rotate(18deg) scale(1.14);
+  animation-duration: 46s;
+  animation-direction: reverse;
+}
+
+.home-orbit-field > * {
+  position: relative;
+  z-index: 1;
+}
+
+@media (hover: hover) and (pointer: fine) {
   .cursor-effect {
     display: block;
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
-    width: 22px;
-    height: 22px;
-    border: 1px solid var(--accent-stream);
+    width: 128px;
+    height: 128px;
     border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 30%, rgba(72, 113, 240, 0.78), transparent 42%),
+      radial-gradient(circle at 68% 70%, rgba(214, 91, 48, 0.62), transparent 48%),
+      radial-gradient(circle, rgba(54, 94, 198, 0.58) 0%, transparent 72%);
     opacity: 0;
     pointer-events: none;
+    filter: blur(3px);
     transform: translate3d(calc(var(--cursor-x, -100px) - 50%), calc(var(--cursor-y, -100px) - 50%), 0);
-    transition: opacity 0.2s ease, width 0.25s var(--ease-smooth), height 0.25s var(--ease-smooth);
+    transition: opacity 0.35s ease;
   }
 
   .cursor-effect::after {
@@ -127,15 +171,56 @@ a {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 4px;
-    height: 4px;
+    width: 7px;
+    height: 7px;
     border-radius: 50%;
-    background: var(--accent-warn);
+    background: var(--accent-stream);
+    box-shadow: 0 0 14px var(--accent-stream), 0 0 28px rgba(94, 139, 255, 0.72);
     transform: translate(-50%, -50%);
   }
 
+  .cursor-effect::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 54px;
+    height: 54px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    background: conic-gradient(
+      from 20deg,
+      transparent 0deg 52deg,
+      rgba(142, 174, 255, 1) 70deg 112deg,
+      transparent 132deg 214deg,
+      rgba(255, 173, 132, 1) 232deg 274deg,
+      transparent 294deg 360deg
+    ) border-box;
+    -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    transform: translate(-50%, -50%);
+    animation: cursor-orbit 4s linear infinite;
+    filter: drop-shadow(0 0 4px rgba(94, 139, 255, 0.9)) drop-shadow(0 0 7px rgba(255, 138, 94, 0.55));
+  }
+
   .cursor-effect.is-visible {
-    opacity: 0.9;
+    opacity: 1;
+  }
+}
+
+@keyframes cursor-orbit {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+@keyframes page-orbit {
+  from {
+    transform: rotate(-12deg) scale(1.08);
+  }
+  to {
+    transform: rotate(348deg) scale(1.08);
   }
 }
 
