@@ -209,6 +209,23 @@ a {
   }
 }
 
+@media (hover: hover) and (pointer: fine) and (max-width: 767px) {
+  .cursor-effect {
+    width: 76px;
+    height: 76px;
+  }
+
+  .cursor-effect::before {
+    width: 34px;
+    height: 34px;
+  }
+
+  .cursor-effect::after {
+    width: 5px;
+    height: 5px;
+  }
+}
+
 @keyframes cursor-orbit {
   to {
     transform: translate(-50%, -50%) rotate(360deg);
