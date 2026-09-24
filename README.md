@@ -1,4 +1,4 @@
-# Kumudh T — Backend Engineer Portfolio
+# Kumud T — Backend Engineer Portfolio
 
 A fast, animated, Apple-inspired portfolio for a Java backend engineer specializing
 in Spring Boot, Kafka, and microservices. Built as a fully static React app —
@@ -92,7 +92,7 @@ initial page load stays small (~120KB gzipped JS) for a fast first paint.
 4. Deploy. Every future `git push` auto-redeploys.
 
 **Custom domain (optional):** In Netlify, go to *Domain settings → Add a domain*.
-A `.dev` domain (e.g. `kumudh.dev`) from Namecheap/Porkbun reads very well for
+A `.dev` domain (e.g. `kumud.dev`) from Namecheap/Porkbun reads very well for
 an engineer's portfolio and costs ~$10-15/year.
 
 ### Contact form
@@ -151,3 +151,17 @@ ssssssss
 dddddddd
 fffffffffff
 cccccccc
+qqqqqqqqqqq
+wwwwwww
+eeeeeeee
+rrrrrrrrrr
+ttttttttt
+aaaaaaaaaaa
+ssssssssss
+dddddddd
+fffffffff
+hhhhhhhhh
+aaaaaaaaa
+qqqqqqqq
+aaaaaaaa
+qqqqqqqqqq

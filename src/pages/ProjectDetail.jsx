@@ -5,12 +5,14 @@ import { GithubIcon } from "../components/BrandIcons";
 import { PrismAsyncLight as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark, oneLight } from "react-syntax-highlighter/dist/esm/styles/prism";
 import java from "react-syntax-highlighter/dist/esm/languages/prism/java";
+import python from "react-syntax-highlighter/dist/esm/languages/prism/python";
 import { getProjectBySlug } from "../data/projects";
 import ArchitectureDiagram from "../components/ArchitectureDiagram";
 import TopicDivider from "../components/TopicDivider";
 import { useTheme } from "../context/ThemeContext";
 
 SyntaxHighlighter.registerLanguage("java", java);
+SyntaxHighlighter.registerLanguage("python", python);
 
 const fadeUp = {
   initial: { opacity: 0, y: 20 },

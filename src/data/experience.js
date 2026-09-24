@@ -1,26 +1,27 @@
-// Formatted like structured log entries — the "About/Experience as logs" motif
+// Work history grouped by employer and client engagement.
 export const experience = [
   {
-    company: "Mphasis",
+    company: "Mphasis Ltd.",
     role: "Software Engineer",
-    period: "2024 — Present",
+    period: "Aug 2024 - Present",
     status: "current",
     engagements: [
       {
-        client: "Charles Schwab",
+        client: "HP | Java Backend Developer",
         bullets: [
-          "Developed and maintained REST APIs using Spring Boot serving internal trading-support tools",
-          "Built Kafka producers and consumers to process transaction events across 4+ downstream services",
-          "Implemented Role-Based Access Control (RBAC) across API endpoints, reducing unauthorized access incidents to zero",
-          "Wrote integration tests with JUnit and Mockito, raising module test coverage from 54% to 87%",
+          "Maintained and enhanced CDAX, HP's internal parts-ordering and CE task-management platform using Java Spring Boot, MySQL, and PostgreSQL",
+          "Diagnosed and fixed a critical order-routing bug where orders were accepted without a valid zipcode, preventing wrong deliveries through frontend and backend validation",
+          "Delivered end-to-end feature changes from stakeholder requirements, including adding, modifying, and deprecating application functionality",
+          "Technologies: Java, Spring Boot, REST APIs, MySQL, PostgreSQL, Git",
         ],
       },
       {
-        client: "HP",
+        client: "Charles Schwab | Kafka Integration Engineer",
         bullets: [
-          "Optimized API response times by 35% through query tuning and targeted Redis caching",
-          "Set up and maintained CI/CD pipelines using Bamboo, cutting average deployment time from 20 to 6 minutes",
-          "Collaborated directly with frontend engineers to define and version REST contracts, reducing integration bugs across 3 sprint cycles",
+          "Led Kafka onboarding for 15+ enterprise applications, configuring topics, producers, and consumers for reliable event-driven communication across distributed systems",
+          "Built and maintained CI/CD pipelines using Bamboo and Harness, resolving build failures and ensuring smooth deployments across onboarded applications",
+          "Used Ansible to remotely configure and manage servers, ensuring consistent and repeatable deployment environments",
+          "Technologies: Java, Apache Kafka, Spring Boot, Bamboo, Harness, Ansible, Docker, Linux",
         ],
       },
     ],

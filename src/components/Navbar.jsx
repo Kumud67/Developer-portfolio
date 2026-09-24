@@ -19,7 +19,7 @@ export default function Navbar() {
         style={{ boxShadow: "var(--shadow-soft)" }}
       >
         <Link to="/" className="text-[15px] font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-          Kumudh T
+          Kumud T
         </Link>
 
         {location.pathname === "/" && (
@@ -28,7 +28,7 @@ export default function Navbar() {
               <li key={link.to}>
                 <a
                   href={link.to}
-                  className="rounded-lg px-3 py-1.5 text-[13px] transition-colors hover:bg-[var(--bg-glass)] hover:text-[var(--text-primary)]"
+                  className="rounded-lg px-3 py-1.5 text-[15px] transition-colors hover:bg-[var(--bg-glass)] hover:text-[var(--text-primary)]"
                   style={{ color: "var(--text-secondary)" }}
                 >
                   {link.label}

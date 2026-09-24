@@ -97,6 +97,48 @@ a {
   text-decoration: none;
 }
 
+.cursor-effect {
+  display: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  body {
+    cursor: none;
+  }
+
+  .cursor-effect {
+    display: block;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 22px;
+    height: 22px;
+    border: 1px solid var(--accent-stream);
+    border-radius: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate3d(calc(var(--cursor-x, -100px) - 50%), calc(var(--cursor-y, -100px) - 50%), 0);
+    transition: opacity 0.2s ease, width 0.25s var(--ease-smooth), height 0.25s var(--ease-smooth);
+  }
+
+  .cursor-effect::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent-warn);
+    transform: translate(-50%, -50%);
+  }
+
+  .cursor-effect.is-visible {
+    opacity: 0.9;
+  }
+}
+
 ::selection {
   background: var(--accent-stream-dim);
   color: var(--text-primary);
