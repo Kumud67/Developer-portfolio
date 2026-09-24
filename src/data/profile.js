@@ -11,7 +11,7 @@ export const profile = {
   links: {
     github: "https://github.com/Kumud67",
     linkedin: "https://www.linkedin.com/in/kumudt67/",
-    resume: "/Kumud_T_Resume_v3.docx",
+    resume: "/Kumud_T_Resume_v4.pdf",
   },
   education: {
     degree: "B.E. in Electronics and Communication Engineering",

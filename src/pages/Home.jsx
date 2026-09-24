@@ -90,7 +90,7 @@ export default function Home() {
           >
             <a
               href={profile.links.resume}
-              download="Kumud_T_Resume_v3.docx"
+              download="Kumud_T_Resume_v4.pdf"
               aria-label="Download resume"
               className="flex items-center gap-2 rounded-full px-5 py-2.5 text-[14px] font-semibold transition-transform hover:-translate-y-0.5"
               style={{ background: "var(--accent-stream)", color: "#0a0a0c" }}
